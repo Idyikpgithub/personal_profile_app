@@ -13,7 +13,7 @@ class AboutSection extends StatelessWidget {
         children: [
           Text(
             'About Me',
-            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
           ),
           SizedBox(height: 10),
           Text(

@@ -5,6 +5,7 @@ import 'package:personal_profile_app/contact_section.dart';
 import 'package:personal_profile_app/profile_header.dart';
 import 'package:personal_profile_app/projects_section.dart';
 import 'package:personal_profile_app/skills_section.dart';
+import 'package:personal_profile_app/them/app_them.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -14,6 +15,7 @@ class ProfileScreen extends StatelessWidget {
     return const Scaffold(
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ProfileHeader(),
             SizedBox(height: 20),
@@ -28,6 +30,22 @@ class ProfileScreen extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class ProfileApp extends StatelessWidget {
+  const ProfileApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'My Profile',
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
+      themeMode: ThemeMode.system, // 🌗 auto-switch based on system
+      home: const ProfileScreen(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
